@@ -76,9 +76,9 @@ router.get("/delete/:id", function(req, res) {
 
   Article.findOneAndRemove({"_id": req.params.id}, function (err, offer) {
     if (err) {
-      console.log("Not able to delete:" + err);
+      console.log("not deleted" + err);
     } else {
-      console.log("Able to delete, Yay");
+      console.log('deleted')
     }
     res.redirect("/savedarticles");
   });
@@ -86,15 +86,11 @@ router.get("/delete/:id", function(req, res) {
 
 router.get("/notes/:id", function(req, res) {
 
-  console.log("ID is getting read for delete" + req.params.id);
-
-  console.log("Able to activate delete function.");
-
   Note.findOneAndRemove({"_id": req.params.id}, function (err, doc) {
     if (err) {
-      console.log("Not able to delete:" + err);
+      console.log("not deleted" + err);
     } else {
-      console.log("Able to delete, Yay");
+      console.log('deleted')
     }
     res.send(doc);
   });
@@ -112,10 +108,9 @@ router.get("/articles/:id", function(req, res) {
 
   .exec(function(err, doc) {
     if (err) {
-      console.log("Not able to find article and get notes.");
+      console.log(err);
     }
     else {
-      console.log("We are getting article and maybe notes? " + doc);
       res.json(doc);
     }
   });
@@ -140,9 +135,9 @@ router.post("/articles/:id", function(req, res) {
 
       .exec(function (err, doc) {
         if (err) {
-          console.log("Cannot find article.");
+          console.log("no article");
         } else {
-          console.log("On note save we are getting notes? " + doc.notes);
+          console.log(doc.notes);
           res.send(doc);
         }
       });
