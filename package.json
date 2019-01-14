@@ -1,5 +1,5 @@
 {
-  "name": "17-News",
+  "name": "mongodb-news-scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,22 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaal6739/17-News.git"
+    "url": "git+https://github.com/llandicho/MongoDB-News-Scraper.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zaal6739/17-News/issues"
+    "url": "https://github.com/llandicho/MongoDB-News-Scraper/issues"
   },
-  "homepage": "https://github.com/zaal6739/17-News#readme",
+  "homepage": "https://github.com/llandicho/MongoDB-News-Scraper#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.4",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mongojs": "^2.6.0",
-    "mongoose": "^5.4.3",
-    "request": "^2.88.0"
+    "mongoose": "^5.0.10",
+    "morgan": "^1.9.0",
+    "request": "^2.85.0"
   }
 }
