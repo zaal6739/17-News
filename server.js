@@ -31,9 +31,10 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 var routes = require("./controllers/scraperController.js");
 
+mongoose.connect("mongodb://heroku_pwg2gv2l:88v3iq0tnua7r09tmv6tsmgf7h@ds153814.mlab.com:53814/heroku_pwg2gv2l", { useNewUrlParser: true });
 app.use("/", routes);
 
-mongoose.connect("mongodb://heroku_pwg2gv2l:88v3iq0tnua7r09tmv6tsmgf7h@ds153814.mlab.com:53814/heroku_pwg2gv2l", { useNewUrlParser: true });
+
 
 var db = mongoose.connection;
 
