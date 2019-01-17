@@ -19,24 +19,26 @@ router.get("/", function(req, res) {
 });
 
 // This will get the articles scraped and saved in db and show them in list.
-router.get("/savedarticles", function(req, res) {
+// router.get("/savedarticles", function(req, res) {
 
-  // Grab every doc in the Articles array
-  Article.find({}, function(error, doc) {
-    // Log any errors
-    if (error) {
-      console.log(error+"error");
-    }
-    // Or send the doc to the browser as a json object
-    else {
-      var hbsArticleObject = {
-        articles: doc
-      };
+//   // Grab every doc in the Articles array
+//   Article.find({}, function(error, doc) {
+//     console.log(error+ "  this is the error")
+//     console.log("the following *******************   "+doc+" this is the doc")
+//     // Log any errors
+//     if (error) {
+//       console.log(error+"error");
+//     }
+//     // Or send the doc to the browser as a json object
+//     else {
+//       var hbsArticleObject = {
+//         articles: doc
+//       };
 
-      res.render("savedarticles", hbsArticleObject);
-    }
-  });
-});
+//       res.render("savedarticles", hbsArticleObject);
+//     }
+//   });
+// });
 
 router.post("/save", function(req, res) {
 
