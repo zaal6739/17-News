@@ -19,7 +19,7 @@ router.get("/", function(req, res) {
 });
 
 // This will get the articles scraped and saved in db and show them in list.
-router.get("/savedarticles", function(req, res) {
+router.post("/savedarticles", function(req, res) {
 
   // Grab every doc in the Articles array
   Article.find({}, function(error, doc) {
