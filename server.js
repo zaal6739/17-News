@@ -14,7 +14,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Use morgan and body parser with our app
-app.use(logger("dev"));
+app.use(express.logger("dev"));//added express to logger 
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -27,13 +27,12 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.set('views', __dirname+'/views')
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/scraperController.js");
-
-mongoose.connect("mongodb://heroku_pwg2gv2l:88v3iq0tnua7r09tmv6tsmgf7h@ds153814.mlab.com:53814/heroku_pwg2gv2l", { useNewUrlParser: true });
 app.use("/", routes);
-
+mongoose.connect("mongodb://heroku_pwg2gv2l:88v3iq0tnua7r09tmv6tsmgf7h@ds153814.mlab.com:53814/heroku_pwg2gv2l", { useNewUrlParser: true });
 
 
 var db = mongoose.connection;
