@@ -25,7 +25,7 @@ router.get("/savedarticles", function(req, res) {
   Article.find({}, function(error, doc) {
     // Log any errors
     if (error) {
-      console.log(error);
+      console.log(error+"error");
     }
     // Or send the doc to the browser as a json object
     else {
