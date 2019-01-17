@@ -16,6 +16,9 @@ p {
     width: 50%;
 }
 
+.body {
+    background-color: bisque;
+}
 .jumbotron {
   overflow: hidden;
     background-size: 50%;
@@ -45,4 +48,4 @@ p {
 */
 @media screen and (max-width: 640px) {
   
-}
+}s
