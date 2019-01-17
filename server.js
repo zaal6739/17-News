@@ -14,7 +14,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Use morgan and body parser with our app
-app.use(express.logger("dev"));//added express to logger 
+app.use(logger("dev"));//added express to logger 
 app.use(bodyParser.urlencoded({
   extended: false
 }));
